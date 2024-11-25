@@ -55,7 +55,7 @@ def save_images_to_mongodb(cam_id, interval=5):
                 }
 
                 result = images_collection.insert_one(image_document)
-                print(f"Camera {cam_id}: Save image to MongoDB with ID: {result.inserted_id}")
+                print(f"Camera {cam_id}: Save image {image_document['url']} to MongoDB")
             else:
                 print(f"Camera {cam_id} {response.status_code}")
 
